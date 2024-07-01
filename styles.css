@@ -1,0 +1,190 @@
+:root{
+    font-size: 16px;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    
+    --text-primary: #8A949E;    
+    --text-primary2: #14110e;
+    --text-secondary: #EDEDED;
+    --iconColor: #9ae19d;
+    --color-hover: #0d213d;
+    --navBar-bg: #122D54;
+    --text-accent: #e74c3c; /* Text accent color in a shade of red */
+    --color-background: #0e0e0e;  /* Background color for the website */
+    --color-card-bg: #1a1a1a;    /* Background color for cards or containers */
+    --color-border: #303030;      /* Border color for elements */
+    --color-button-bg: #1f4b70;   /* Background color for buttons */
+    --color-button-text: #FFFFFF; /* Text color for buttons */
+    --color-link: #9ae19d;        /* Link color */
+    --color-input-bg: #2b2b2b;    /* Background color for input fields */
+    --color-input-text: #EDEDED;  /* Text color for input fields */
+    --color-footer-bg: #121212;   /* Background color for footer */
+    --color-footer-text: #8A949E; /* Text color for footer */
+    
+    --color-pal2-4: #1A1945;
+    --color-pal2-5: #21355E;
+    --color-pal2-6: #9ae19d;
+
+    --transition-speed: 540ms;
+    /* color: var(--color-pal2-4); */
+    /* --color-0: #F0F7F4;
+    --color-1: #101935;
+    --color-2: #564787;
+    --color-3:#9AD4D6;
+    --color-4: #DBCBD8;
+    --color-5: #F2FDFF;
+    --color-6: #705D56; */
+
+
+    /* --color-pal-1: #2c302e;
+    --color-pal-2: #474a48;
+    --color-pal-3: #909590;
+    --color-pal-4: #9ae19d;
+    --color-pal-5: #537a5a; */
+
+
+    
+}
+
+.jetbrains-mono-Font {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body{
+    /* display: grid; */
+    /* place-items: center; */
+    height: 100vh;
+    background: var(--color-background);
+    color: var(--text-secondary);
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+body::-webkit-scrollbar{
+    width: 0.34rem;
+}
+body::-webkit-scrollbar-track{
+    background: var(--text-primary);
+}
+body::-webkit-scrollbar-thumb{
+    background: var(--color-pal2-6);
+    border-radius: 2rem;
+}
+
+main{
+    margin-right: 5rem;
+    padding: 1rem;
+}
+
+.navBar{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: var(--navBar-bg);
+    transition: width 400ms ease;
+}
+
+.navBarNav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.navItem{
+    width: 100%;
+}
+.navItem:last-child{
+    margin-top: auto;
+}
+
+.navLink{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+.navLink:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--color-hover);
+    color: var(--text-secondary);
+}
+.navLink svg{
+    min-width: 1.5rem;
+    width: 50%;
+    max-width: 3rem;
+    margin: 0 0.9rem;
+}
+
+.linkText{
+    display: none;
+    margin-left: 0.65rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(2rem, 2vw, 2rem);
+    font-weight: 500;
+}
+
+.iconPrimary{
+    color: var(--iconColor);
+    transition: var(--transition-speed);
+}
+
+
+
+
+
+
+/* h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+} */
+
+
+@media only screen and (max-width: 600px){
+    .navBar{
+        top:auto;
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+        border-radius: 0.7rem 0.7rem 0rem 0rem;
+        transform: translateX(0%);
+    }
+    .navBarNav{
+        flex-direction: row;
+    }
+    .navLink{
+        justify-content: center;
+    }
+    main{
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .navBar{
+        /* top: 0; */
+        width: 5rem;
+        height: 100vh;
+        border-radius: 0.7rem 0rem 0rem 0.7rem;
+
+    }
+    .navBar:hover{
+        width: 16rem;
+    }
+
+    .navBar:hover .linkText{
+        display: inline;
+    }
+}
